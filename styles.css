@@ -9,48 +9,48 @@
    ========================================================================== */
 
 :root {
-  /* Global Dashbio Light Palette */
-  --bg-page: #F6F5F0;
+  /* Global Dashbio Light Palette - Refined & Balanced */
+  --bg-page: #F6F5F2;
   --bg-page-subtle: #EEEEEC;
-  --text-main: #141414;
-  --text-muted: #66635B;
-  --text-subtle: #8C887E;
-  --line-color: rgba(20, 20, 20, 0.08);
-  --line-strong: rgba(20, 20, 20, 0.15);
+  --text-main: #18181B;
+  --text-muted: #52525B;
+  --text-subtle: #71717A;
+  --line-color: rgba(24, 24, 27, 0.08);
+  --line-strong: rgba(24, 24, 27, 0.14);
 
-  /* Dashbio Distinct Card Theme Colors (Light) */
-  --card-profile-bg: #FFFF85;       /* Vibrant Pale Yellow */
-  --card-profile-text: #4D4D00;
-  --card-profile-tag: #E6E600;
+  /* Dashbio Distinct Card Theme Colors (Light) - Elegant soft pastels */
+  --card-profile-bg: #FEF9C3;       /* Soft Buttercup Yellow */
+  --card-profile-text: #422006;
+  --card-profile-tag: #FDE047;
 
-  --card-featured-bg: #8BF2C7;      /* Fresh Mint/Green */
-  --card-featured-text: #11573B;
-  --card-featured-tag: #50E6A5;
+  --card-featured-bg: #DCFCE7;      /* Fresh Sage Mint */
+  --card-featured-text: #14532D;
+  --card-featured-tag: #86EFAC;
 
-  --card-projects-bg: #FFC0B3;      /* Warm Peach/Coral */
-  --card-projects-text: #5A2318;
-  --card-projects-tag: #FF9B85;
+  --card-projects-bg: #FFE4E6;      /* Soft Coral Blush */
+  --card-projects-text: #881337;
+  --card-projects-tag: #FDA4AF;
 
-  --card-skills-bg: #D4B3FF;        /* Lavender/Lilac */
-  --card-skills-text: #3E1D6B;
-  --card-skills-tag: #BC8EFF;
+  --card-skills-bg: #EDE9FE;        /* Soft Lilac Iris */
+  --card-skills-text: #4C1D95;
+  --card-skills-tag: #C4B5FD;
 
-  --card-links-bg: #7FE5FF;         /* Sky / Aqua */
-  --card-links-text: #0E4857;
-  --card-links-tag: #40D4FA;
+  --card-links-bg: #E0F2FE;         /* Sky / Ice Blue */
+  --card-links-text: #0369A1;
+  --card-links-tag: #7DD3FC;
 
-  --card-contact-bg: #FFB3DE;       /* Pastel Rose/Pink */
-  --card-contact-text: #59163E;
-  --card-contact-tag: #FF87C8;
+  --card-contact-bg: #FCE7F3;       /* Delicate Rose */
+  --card-contact-text: #831843;
+  --card-contact-tag: #F472B6;
 
-  /* Card Geometry */
-  --card-radius: 40px;
-  --inner-radius: 24px;
+  /* Card Geometry - Dashbio proportions */
+  --card-radius: 36px;
+  --inner-radius: 20px;
   --pill-radius: 9999px;
-  --card-width: 440px;
-  --card-height: 80vh;
-  --card-min-height: 620px;
-  --card-max-height: 820px;
+  --card-width: 420px;
+  --card-height: 76vh;
+  --card-min-height: 580px;
+  --card-max-height: 760px;
 
   /* Typography */
   --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
@@ -63,38 +63,38 @@
 
 /* Dark Mode Tokens (Dashbio Dark Mode) */
 [data-theme="dark"] {
-  --bg-page: #101010;
-  --bg-page-subtle: #181818;
-  --text-main: #F4F4F2;
-  --text-muted: #A8A59E;
-  --text-subtle: #6D6A63;
+  --bg-page: #0C0C0E;
+  --bg-page-subtle: #18181B;
+  --text-main: #F4F4F5;
+  --text-muted: #A1A1AA;
+  --text-subtle: #71717A;
   --line-color: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.16);
 
   /* Deep rich contrast in dark mode */
-  --card-profile-bg: #2C2B14;
-  --card-profile-text: #FFFFA3;
-  --card-profile-tag: #454316;
+  --card-profile-bg: #221D0E;
+  --card-profile-text: #FEF08A;
+  --card-profile-tag: #42381C;
 
-  --card-featured-bg: #0D2E21;
-  --card-featured-text: #96FCD0;
-  --card-featured-tag: #174A36;
+  --card-featured-bg: #0D261A;
+  --card-featured-text: #BBF7D0;
+  --card-featured-tag: #17422E;
 
-  --card-projects-bg: #351C17;
-  --card-projects-text: #FFD1C9;
-  --card-projects-tag: #532C24;
+  --card-projects-bg: #2C1319;
+  --card-projects-text: #FECDD3;
+  --card-projects-tag: #4D212B;
 
-  --card-skills-bg: #26163D;
-  --card-skills-text: #E5D1FF;
-  --card-skills-tag: #3B245D;
+  --card-skills-bg: #1E1633;
+  --card-skills-text: #DDD6FE;
+  --card-skills-tag: #37285C;
 
-  --card-links-bg: #102B33;
-  --card-links-text: #A6EFFF;
-  --card-links-tag: #1B4450;
+  --card-links-bg: #0C2333;
+  --card-links-text: #BAE6FD;
+  --card-links-tag: #173B52;
 
-  --card-contact-bg: #361427;
-  --card-contact-text: #FFC4E7;
-  --card-contact-tag: #54223E;
+  --card-contact-bg: #2B1220;
+  --card-contact-text: #FBCFE8;
+  --card-contact-tag: #4A2038;
 }
 
 /* Base Reset */
@@ -165,19 +165,16 @@ button {
 }
 
 /* ==========================================================================
-   TOP BAR / BRAND & CONTROLS
+   TOP BAR / BRAND & CONTROLS (Normal document flow - Not overlapping cards)
    ========================================================================== */
 .dash-top {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  position: relative;
+  z-index: 10;
   width: 100%;
-  padding: 1rem clamp(1rem, 3.5vw, 2.5rem);
-  background: color-mix(in srgb, var(--bg-page) 85%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 1.25rem clamp(1rem, 3.5vw, 2.5rem);
+  background: var(--bg-page);
   border-bottom: 1px solid var(--line-color);
-  transition: background 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+  transition: background 0.3s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
 }
 
 .dash-top-inner {
@@ -633,13 +630,13 @@ button {
   gap: 0.75rem;
 }
 .dash-p-card {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 18px;
   padding: 0.85rem 1rem;
   cursor: pointer;
   text-align: left;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s var(--ease-spring), background 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s var(--ease-spring), background 0.2s, opacity 0.2s;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -647,14 +644,38 @@ button {
 }
 [data-theme="dark"] .dash-p-card {
   background: rgba(0, 0, 0, 0.35);
-  border-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 .dash-p-card:hover {
   transform: translateX(4px);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 }
 [data-theme="dark"] .dash-p-card:hover {
   background: rgba(0, 0, 0, 0.55);
+}
+
+/* De-emphasized projects (Menor ênfase visual conforme solicitação) */
+.dash-p-card.p-subtle {
+  opacity: 0.62;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px dashed rgba(0, 0, 0, 0.08);
+}
+[data-theme="dark"] .dash-p-card.p-subtle {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.08);
+  opacity: 0.55;
+}
+.dash-p-card.p-subtle .dash-p-t {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+.dash-p-card.p-subtle:hover {
+  opacity: 1;
+  transform: translateX(3px);
+  background: rgba(255, 255, 255, 0.75);
+}
+[data-theme="dark"] .dash-p-card.p-subtle:hover {
+  background: rgba(0, 0, 0, 0.45);
 }
 .dash-p-main {
   flex: 1 1 auto;
@@ -869,6 +890,16 @@ button {
   font-weight: 600;
 }
 .c-item a:hover {
+  text-decoration: underline;
+}
+.wa-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: inherit;
+  font-weight: 700 !important;
+}
+.wa-contact-link:hover {
   text-decoration: underline;
 }
 .dash-share-box {

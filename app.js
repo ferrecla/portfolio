@@ -34,7 +34,30 @@
 
   const T = () => DATA.ui[state.lang];
   const F = () => DATA.fronts[state.area][state.lang];
-  const visible = () => DATA.projects.filter(p => p.areas.includes(state.area));
+  function parseYearScore(yr) {
+    const s = String(yr || '').replace(/—/g, '-').replace(/–/g, '-').trim();
+    if (s.includes('-')) {
+      const parts = s.split('-');
+      const start = parseInt(parts[0], 10) || 0;
+      const endPart = parts[1].trim();
+      let end;
+      if (endPart === '') {
+        end = 2026; // Em andamento
+      } else if (!isNaN(parseInt(endPart, 10))) {
+        end = parseInt(endPart, 10);
+      } else {
+        end = start;
+      }
+      return end * 10000 + start;
+    }
+    const y = parseInt(s, 10) || 0;
+    return y * 10000 + y;
+  }
+
+  const visible = () => DATA.projects
+    .filter(p => p.areas.includes(state.area))
+    .slice()
+    .sort((a, b) => parseYearScore(b.year) - parseYearScore(a.year));
 
   function roleOf(p) {
     if (p.roleByArea && p.roleByArea[state.area]) {
@@ -86,9 +109,14 @@
     $('#headline').textContent = f.headline;
     $('#lede').textContent = f.lede;
 
-    $('#stats').innerHTML = f.stats.map(s =>
-      `<li><b>${esc(s.n)}</b><span>${esc(s.l)}</span></li>`
-    ).join('');
+    const statsHtml = (f.stats && f.stats.length)
+      ? f.stats.map(s => `<li><b>${esc(s.n)}</b><span>${esc(s.l)}</span></li>`).join('')
+      : '';
+    $('#stats').innerHTML = statsHtml;
+    const profileFooter = $('#cardProfile .c-footer');
+    if (profileFooter) {
+      profileFooter.style.display = statsHtml ? '' : 'none';
+    }
 
     $('#bio').innerHTML = f.bio.map(p => `<p>${esc(p)}</p>`).join('');
   }
@@ -98,19 +126,30 @@
     const t = T();
     const list = visible();
 
+    const featuredCard = $('#cardFeatured');
+    const dockFeaturedBtn = document.querySelector('.dock-btn[data-target="cardFeatured"]');
+
+    if (state.area === 'artes') {
+      if (featuredCard) featuredCard.style.display = 'none';
+      if (dockFeaturedBtn) dockFeaturedBtn.style.display = 'none';
+      return;
+    }
+
+    if (featuredCard) featuredCard.style.display = '';
+    if (dockFeaturedBtn) dockFeaturedBtn.style.display = '';
+
     $('#tFeaturedTag').textContent = isPt ? 'Destaques' : 'Highlights';
     $('#hintClickCard').textContent = isPt ? 'Toque num item para ver ficha e links ↗' : 'Click any item for details & links ↗';
 
-    // Highlight key projects: Vera, Reality Show, Contra Cena or Fossil
-    const featuredProjects = list.filter(p => ['vera', 'reality-show', 'contra-cena', 'fossil'].includes(p.id));
+    // Highlight key projects for tech: Vera, Arte para Respirar, Contra Cena
+    const featuredProjects = list.filter(p => ['vera', 'arte-para-respirar', 'contra-cena', 'zuca'].includes(p.id));
     const toShow = featuredProjects.length ? featuredProjects : list.slice(0, 3);
 
     $('#featuredCount').textContent = `${toShow.length} ${isPt ? 'selecionados' : 'featured'}`;
 
     $('#featuredContainer').innerHTML = toShow.map((p, i) => {
       const coverImg = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.title)}">` :
-        (p.id === 'reality-show' ? `<img src="assets/img/claudi-avatar.jpeg" alt="${esc(p.title)}">` :
-        `<div class="ph"><span>0${i+1}</span></div>`);
+        `<div class="ph"><span>0${i+1}</span></div>`;
 
       return `
         <div class="featured-item" data-id="${p.id}" tabindex="0">
@@ -136,19 +175,25 @@
     $('#worksCount').textContent = `${list.length} ${isPt ? 'projetos' : 'projects'}`;
     $('#scrollMoreText').textContent = isPt ? 'Role a lista para ver todos' : 'Scroll down to explore all';
 
-    $('#grid').innerHTML = list.map((p, i) => `
-      <div class="dash-p-card" data-id="${p.id}" tabindex="0" role="button" aria-label="${esc(p.title)}">
-        <div class="dash-p-main">
-          <h4 class="dash-p-t">${esc(p.title)}</h4>
-          <p class="dash-p-r">${esc(roleOf(p))}</p>
-          <p class="dash-p-org">${esc(p.org[state.lang])}</p>
+    // Projetos com menos ênfase visual (opacidade suave, escala contida)
+    const deEmphasizedIds = ['felicidade', 'mundareu', 'locarte', 'telas'];
+
+    $('#grid').innerHTML = list.map((p, i) => {
+      const isMuted = deEmphasizedIds.includes(p.id);
+      return `
+        <div class="dash-p-card ${isMuted ? 'p-subtle' : ''}" data-id="${p.id}" tabindex="0" role="button" aria-label="${esc(p.title)}">
+          <div class="dash-p-main">
+            <h4 class="dash-p-t">${esc(p.title)}</h4>
+            <p class="dash-p-r">${esc(roleOf(p))}</p>
+            <p class="dash-p-org">${esc(p.org[state.lang])}</p>
+          </div>
+          <div class="dash-p-side">
+            <span class="dash-p-yr">${esc(p.year)}</span>
+            <div class="dash-p-arrow">↗</div>
+          </div>
         </div>
-        <div class="dash-p-side">
-          <span class="dash-p-yr">${esc(p.year)}</span>
-          <div class="dash-p-arrow">↗</div>
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   function renderSkills() {
@@ -230,9 +275,21 @@
     $('#btnCopyText').textContent = t.copy;
 
     const items = [
-      { label: t.email, val: `<a href="mailto:${c.email}">${c.email}</a>` },
-      { label: t.phone, val: `<a href="tel:${c.phoneHref}">${c.phone}</a>` },
-      { label: t.based, val: `<span>${esc(c.city[state.lang])}</span>` }
+      {
+        label: t.email,
+        val: `<a href="mailto:${c.email}">${c.email}</a>`
+      },
+      {
+        label: "WhatsApp",
+        val: `<a href="${c.whatsapp || ('https://wa.me/' + c.phone.replace(/[^0-9]/g, ''))}" target="_blank" rel="noopener" class="wa-contact-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.121-.518-1.745-.722-2.888-2.502-2.975-2.617-.087-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.35.491 1.199.534 1.286.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.073.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.185.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416c-5.513 0-10 4.487-10 10 0 1.954.564 3.782 1.545 5.334l-1.637 5.975 6.136-1.609c1.493.815 3.197 1.28 5.006 1.28 5.513 0 10-4.487 10-10 0-5.513-4.487-10-10-10z"/></svg>
+          ${isPt ? 'Conversar no WhatsApp ↗' : 'Chat on WhatsApp ↗'}
+        </a>`
+      },
+      {
+        label: t.based,
+        val: `<span>${esc(c.city[state.lang])}</span>`
+      }
     ];
 
     $('#contactLinks').innerHTML = items.map(item => `

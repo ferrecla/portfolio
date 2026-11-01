@@ -5,7 +5,7 @@ const DATA = {
   contact: {
     email: "fferreiraclaudi@gmail.com",
     phone: "+55 11 95186-5699",
-    phoneHref: "+5511951865699",
+    whatsapp: "https://wa.me/5511951865699",
     city: { pt: "São Paulo, Brasil", en: "São Paulo, Brazil" },
     linkedin: "https://www.linkedin.com/in/claudi-ferreira-0bba31267/",
     cargo: "https://claudi.cargo.site",
@@ -46,11 +46,7 @@ const DATA = {
           "Claudi Ferreira é artista da cena, técnico de iluminação e som e produtor. Pesquisa corpo, imagem e desaparecimento na performance contemporânea como bolsista de Iniciação Científica PIBIC-CEPE na PUC-SP, onde cursa o Bacharelado em Comunicação das Artes do Corpo.",
           "Opera luz e áudio em circulação nacional e internacional, com apresentações em Bruxelas, Berlim, Braunschweig, São Paulo, Belo Horizonte e Porto Alegre. Fundou a Produtora Maus Tratos, coletivo com três projetos aprovados em políticas públicas de fomento."
         ],
-        stats: [
-          { n: "3", l: "cidades na Europa" },
-          { n: "20", l: "apresentações · Cavalo bravo" },
-          { n: "3", l: "projetos aprovados em fomento" }
-        ]
+        stats: []
       },
       en: {
         eyebrow: "Performing arts · Light · Sound · Production",
@@ -60,11 +56,7 @@ const DATA = {
           "Claudi Ferreira is a performing artist, lighting and sound technician and producer. He researches body, image and disappearance in contemporary performance as a PIBIC-CEPE undergraduate research fellow at PUC-SP, where he studies for a BA in Communication of Body Arts.",
           "He operates light and audio on national and international tours, with performances in Brussels, Berlin, Braunschweig, São Paulo, Belo Horizonte and Porto Alegre. He founded Produtora Maus Tratos, a collective with three projects granted public cultural funding."
         ],
-        stats: [
-          { n: "3", l: "European cities" },
-          { n: "20", l: "performances · Cavalo bravo" },
-          { n: "3", l: "funded projects" }
-        ]
+        stats: []
       }
     },
     tech: {
@@ -76,11 +68,7 @@ const DATA = {
           "Claudi Ferreira trabalha com comunicação digital, CRM e desenvolvimento web. Foi analista de dados e de conteúdo na operação Kwai pelo IEST Group e Especialista em Mídias Sociais na Teleperformance, atendendo cliente bancário digital com RD Station CRM e Buzz Monitor.",
           "Desenvolveu e mantém a Vera, plataforma de streaming de curtas em Next.js e Supabase, e desenvolveu a plataforma Arte Para Respirar em WordPress. Certificado em Google Analytics 4."
         ],
-        stats: [
-          { n: "4+", l: "anos em operações digitais" },
-          { n: "2", l: "plataformas no ar" },
-          { n: "GA4", l: "certificação Google" }
-        ]
+        stats: []
       },
       en: {
         eyebrow: "Digital communication · CRM · Web development",
@@ -90,11 +78,7 @@ const DATA = {
           "Claudi Ferreira works across digital communication, CRM and web development. He was a data and content analyst on the Kwai operation at IEST Group and a Social Media Specialist at Teleperformance, supporting a digital banking client with RD Station CRM and Buzz Monitor.",
           "He built and maintains Vera, a short-film streaming platform on Next.js and Supabase, and developed the Arte Para Respirar platform on WordPress. Google Analytics 4 certified."
         ],
-        stats: [
-          { n: "4+", l: "years in digital operations" },
-          { n: "2", l: "live platforms" },
-          { n: "GA4", l: "Google certification" }
-        ]
+        stats: []
       }
     }
   },
@@ -141,7 +125,7 @@ const DATA = {
 
   projects: [
     {
-      id:"reality-show", areas:["artes"], year:"2026", img:null,
+      id:"reality-show", areas:["artes"], year:"2026", img:"assets/img/reality-show.png",
       title:"Reality Show",
       org:{pt:"Grupo MEXA",en:"Grupo MEXA"},
       role:{pt:"Operador de iluminação",en:"Lighting operator"},
@@ -158,7 +142,7 @@ const DATA = {
       ]
     },
     {
-      id:"a-mon-seul-desir", areas:["artes"], year:"2025", img:null,
+      id:"a-mon-seul-desir", areas:["artes"], year:"2025", img:"assets/img/a-mon-seul-desir.jpg",
       title:"A mon seul désir",
       org:{pt:"Gaëlle Bourges · Bienal Sesc de Dança",en:"Gaëlle Bourges · Bienal Sesc de Dança"},
       role:{pt:"Performer / residente",en:"Performer / resident"},
@@ -171,7 +155,7 @@ const DATA = {
       links:[{l:"Sesc São Paulo",u:"https://www.sescsp.org.br/editorial/a-mon-seul-desir-ao-meu-unico-desejo-bienal-sesc-de-danca/"}]
     },
     {
-      id:"contra-cena", areas:["artes","tech"], year:"2026", img:null,
+      id:"contra-cena", areas:["artes","tech"], year:"2026", img:"assets/img/contra-cena.jpg",
       title:"Contra Cena",
       org:{pt:"Grupo MEXA · Galeria Yehudi Hollander-Pappi",en:"Grupo MEXA · Galeria Yehudi Hollander-Pappi"},
       role:{pt:"Som e microfones",en:"Sound and microphones"},
@@ -203,7 +187,7 @@ const DATA = {
       ]
     },
     {
-      id:"fossil", areas:["artes"], year:"2025", img:null,
+      id:"fossil", areas:["artes"], year:"2025", img:"assets/img/fossil.png",
       title:"Fóssil",
       org:{pt:"Produtora Maus Tratos",en:"Produtora Maus Tratos"},
       role:{pt:"Proposta performática, expografia e livro-objeto",en:"Performative proposal, exhibition design and artist's book"},
@@ -216,7 +200,7 @@ const DATA = {
       links:[{l:"Instagram",u:"https://www.instagram.com/p/DRh-3I5kgHu/"}]
     },
     {
-      id:"a-ultima-ceia", areas:["artes"], year:"2025", img:null,
+      id:"a-ultima-ceia", areas:["artes"], year:"2025", img:"assets/img/a-ultima-ceia.jpg",
       title:"A última ceia",
       org:{pt:"Grupo MEXA",en:"Grupo MEXA"},
       role:{pt:"Iluminador assistente",en:"Assistant lighting designer"},
@@ -227,7 +211,7 @@ const DATA = {
       links:[]
     },
     {
-      id:"cavalo-bravo", areas:["artes"], year:"2023–2025", img:null,
+      id:"cavalo-bravo", areas:["artes"], year:"2023–2025", img:"assets/img/cavalo-bravo.jpg",
       title:"Cavalo bravo não se amansa",
       org:{pt:"Cia Teatro Documentário",en:"Cia Teatro Documentário"},
       role:{pt:"Sonoplasta",en:"Sound operator"},
@@ -271,7 +255,7 @@ const DATA = {
       links:[]
     },
     {
-      id:"deriva", areas:["artes","tech"], year:"2023–2024", img:null,
+      id:"deriva", areas:["artes","tech"], year:"2023–2024", img:"assets/img/deriva.jpg",
       title:"Deriva",
       org:{pt:"NOIS no DOC",en:"NOIS no DOC"},
       role:{pt:"Som direto e edição de som",en:"Production sound and sound editing"},
@@ -287,7 +271,7 @@ const DATA = {
       ]
     },
     {
-      id:"telas", areas:["artes","tech"], year:"2023", img:null,
+      id:"telas", areas:["artes","tech"], year:"2023", img:"assets/img/telas.png",
       title:"Telas",
       org:{pt:"Formação Livre em Cine/TV",en:"Free Programme in Film/TV"},
       role:{pt:"Captação e edição de som direto",en:"Production sound recording and editing"},
@@ -298,7 +282,7 @@ const DATA = {
       links:[{l:"Festival de Caruaru",u:"https://festivaldecaruaru.com.br/2024/mostra-infantil/telas/"}]
     },
     {
-      id:"solucos", areas:["artes","tech"], year:"2024", img:null,
+      id:"solucos", areas:["artes","tech"], year:"2024", img:"assets/img/solucos.png",
       title:"Soluços de Arranque",
       org:{pt:"Produtora Maus Tratos",en:"Produtora Maus Tratos"},
       role:{pt:"Produção executiva e produção",en:"Executive production and production"},
@@ -368,7 +352,7 @@ const DATA = {
       links:[]
     },
     {
-      id:"zuca", areas:["tech"], year:"2025–2026", img:null,
+      id:"zuca", areas:["tech"], year:"2025–2026", img:"assets/img/zuca-atelier.png",
       title:"Zuca Atelier",
       org:{pt:"Zuca Atelier",en:"Zuca Atelier"},
       role:{pt:"Gestor de Redes e Experiência do Cliente",en:"Social Media and Customer Experience Manager"},
