@@ -1,213 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang="pt">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claudi Ferreira — Portfólio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claudi Ferreira</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Claudi Ferreira — artes da cena, iluminação, som, produção cultural, CRM e desenvolvimento web.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claudi Ferreira">
+<meta property="og:description" content="Artes da cena · Comunicação e tecnologia">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#F6F4EE;
-    --bg-card:#FFFFFF;
-    --ink:#17110B;
-    --muted:#8C887F;
-    --line:rgba(23,17,11,0.10);
-    --black:#141210;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',-apple-system,sans-serif;
-    -webkit-font-smoothing:antialiased;
-    padding:64px 24px 48px;
-  }
-  .wrap{max-width:560px;margin:0 auto;}
-  .top{display:flex;justify-content:flex-end;margin-bottom:56px;}
-  .lang-toggle{
-    font-size:13px;letter-spacing:.02em;color:var(--ink);
-    text-decoration:none;border-bottom:1px solid var(--ink);
-    padding-bottom:2px;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;
-    font-family:inherit;display:flex;align-items:center;gap:6px;
-  }
-  .lang-toggle svg{width:11px;height:11px;}
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-  header.profile{display:flex;align-items:center;gap:18px;margin-bottom:22px;}
-  .avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none;background:#ddd;}
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-  .name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;letter-spacing:-.01em;margin:0 0 2px;}
-  .loc{font-size:13.5px;color:var(--muted);margin:0;}
-  .bio{font-size:15px;line-height:1.65;color:#4b4740;max-width:480px;margin:0 0 60px;}
-  h2.section{
-    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;
-    margin:0 0 22px;padding-bottom:10px;border-bottom:1px solid var(--line);
-    display:flex;align-items:baseline;gap:10px;
-  }
-  h2.section .idx{font-size:11px;color:var(--muted);font-weight:500;font-family:'Inter',sans-serif;}
-  .row{display:grid;grid-template-columns:64px 1fr;gap:14px;margin-bottom:34px;}
-  .row:last-child{margin-bottom:0;}
-  .year{font-size:12.5px;color:var(--muted);padding-top:2px;letter-spacing:.01em;}
-  .proj-title{display:flex;align-items:baseline;gap:8px;margin:0 0 10px;flex-wrap:wrap;}
-  .proj-title .name-p{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;}
-  .proj-title a{font-size:13px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s,color .15s;}
-  .proj-title a:hover{color:var(--ink);border-color:var(--ink);}
-  ol.tasks{margin:0 0 16px;padding-left:18px;color:#3d3a34;}
-  ol.tasks li{font-size:14px;line-height:1.6;margin-bottom:6px;}
-  ol.tasks li:last-child{margin-bottom:0;}
-  ol.tasks a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px;}
-  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-  .thumb{
-    aspect-ratio:1/1;border-radius:10px;overflow:hidden;
-    border:1px solid var(--line);background:#000;position:relative;
-  }
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
-  .thumb:hover img{transform:scale(1.06);}
-  section{margin-bottom:56px;}
-  .edu-title{font-weight:500;font-size:15px;margin:0 0 3px;}
-  .edu-inst{font-size:13.5px;color:var(--muted);margin:0;}
-  footer{margin-top:8px;}
-  .cta{
-    display:flex;align-items:center;justify-content:space-between;
-    background:var(--black);color:#fff;border-radius:44px;
-    padding:6px 6px 6px 22px;margin-bottom:12px;
-    text-decoration:none;transition:transform .15s ease, background .15s ease;
-  }
-  .cta:last-child{margin-bottom:0;}
-  .cta:hover{transform:translateY(-1px);background:#000;}
-  .cta .label{font-size:14px;font-weight:500;color:rgba(255,255,255,0.55);}
-  .cta .chip{
-    background:#fff;color:var(--ink);font-size:13.5px;font-weight:500;
-    padding:11px 20px;border-radius:32px;display:flex;align-items:center;gap:7px;
-  }
-  .cta .chip svg{width:14px;height:14px;}
-  .fine{text-align:center;font-size:11.5px;color:var(--muted);margin-top:52px;letter-spacing:.02em;}
-  @media(max-width:480px){
-    body{padding:44px 18px 40px;}
-    .row{grid-template-columns:52px 1fr;}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#trabalhos">Ir para os trabalhos</a>
 
-  <div class="top">
-    <button class="lang-toggle" id="langBtn" aria-label="Switch language">
-      <span id="langLabel">read in english</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
-    </button>
-  </div>
+<header class="hdr">
+  <a class="hdr-name" href="?">Claudi Ferreira</a>
+  <nav class="ctrls" aria-label="Seletor de área e idioma">
+    <div class="seg" id="segArea" role="group" aria-label="Área"></div>
+    <div class="seg seg-lang" id="segLang" role="group" aria-label="Idioma"></div>
+  </nav>
+</header>
 
-  <header class="profile reveal">
-    <div class="avatar"><img src="IMG_6782.jpeg" alt="Claudi Ferreira"></div>
+<main>
+  <section class="hero">
+    <p class="eyebrow" id="eyebrow"></p>
+    <h1 class="headline" id="headline"></h1>
+    <p class="lede" id="lede"></p>
+    <ul class="stats" id="stats"></ul>
+  </section>
+
+  <section id="trabalhos" class="sec">
+    <h2 class="sec-t" id="tWorks"></h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="sec sec-two">
     <div>
-      <p class="name">Claudi Ferreira</p>
-      <p class="loc" data-pt="São Paulo, Brasil" data-en="São Paulo, Brazil">São Paulo, Brasil</p>
+      <h2 class="sec-t" id="tAbout"></h2>
+      <div class="prose" id="bio"></div>
     </div>
-  </header>
+    <div>
+      <h2 class="sec-t" id="tTools"></h2>
+      <ul class="chips" id="tools"></ul>
+      <h2 class="sec-t mt" id="tEdu"></h2>
+      <ul class="edu" id="edu"></ul>
+    </div>
+  </section>
 
-  <p class="bio reveal"
-    data-pt="Profissional híbrido com atuação multidisciplinar em desenvolvimento web, análise de dados, gestão de CRM, marketing digital e produção cultural/audiovisual independente."
-    data-en="Hybrid professional working across web development, data analysis, CRM management, digital marketing, and independent cultural/audiovisual production.">
-    Profissional híbrido com atuação multidisciplinar em desenvolvimento web, análise de dados, gestão de CRM, marketing digital e produção cultural/audiovisual independente.
-  </p>
-
-  <section>
-    <h2 class="section reveal"><span data-pt="Projetos" data-en="Projects">Projetos</span> <span class="idx">01</span></h2>
-    <div class="row reveal">
-      <div class="year">2025</div>
-      <div>
-        <div class="proj-title">
-          <span class="name-p">VERA</span>
-          <a href="https://veracurtas.com.br" target="_blank" rel="noopener">veracurtas.com.br ↗</a>
-        </div>
-        <ol class="tasks">
-          <li data-pt="Desenvolvimento de plataforma utilizando Strapi e WordPress."
-              data-en="Platform development using Strapi and WordPress.">Desenvolvimento de plataforma utilizando Strapi e WordPress.</li>
-          <li data-pt="Responsável pelo desenvolvimento, produção executiva e estratégia de redes sociais."
-              data-en="Responsible for development, executive production, and social media strategy.">Responsável pelo desenvolvimento, produção executiva e estratégia de redes sociais.</li>
-          <li data-pt='Gestão da identidade visual e presença em redes sociais (<a href="https://instagram.com/vera.curtas" target="_blank" rel="noopener">@vera.curtas</a> no Instagram).'
-              data-en='Management of visual identity and social media presence (<a href="https://instagram.com/vera.curtas" target="_blank" rel="noopener">@vera.curtas</a> on Instagram).'>Gestão da identidade visual e presença em redes sociais (<a href="https://instagram.com/vera.curtas" target="_blank" rel="noopener">@vera.curtas</a> no Instagram).</li>
-        </ol>
-        <div class="thumbs">
-          <div class="thumb"><img src="Screenshot 2026-07-18 at 23.11.33.png" alt="VERA — site"></div>
-          <div class="thumb"><img src="VERA_AVATAR_04.png" alt="VERA — streaming ABC Paulista"></div>
-          <div class="thumb"><img src="primeiro_post_1.png" alt="VERA — streaming ABC Paulista"></div>
+  <section class="sec contact">
+    <h2 class="sec-t" id="tContact"></h2>
+    <div class="contact-grid">
+      <div id="contactLinks"></div>
+      <div class="share">
+        <p class="share-l" id="shareLabel"></p>
+        <div class="share-row">
+          <code id="shareUrl"></code>
+          <button class="btn-copy" id="btnCopy" type="button"></button>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <section>
-    <h2 class="section reveal"><span data-pt="Educação" data-en="Education">Educação</span> <span class="idx">02</span></h2>
+<footer class="ftr"><span id="ftrTxt"></span></footer>
 
-    <div class="row reveal">
-      <div class="year">2024—26</div>
-      <div>
-        <p class="edu-title" data-pt="Técnico em Análise e Desenvolvimento de Sistemas" data-en="Technical degree in Systems Analysis and Development">Técnico em Análise e Desenvolvimento de Sistemas</p>
-        <p class="edu-inst">ETEC Jorge Street</p>
-      </div>
-    </div>
-
-    <div class="row reveal">
-      <div class="year">2023—24</div>
-      <div>
-        <p class="edu-title">Cine/TV</p>
-        <p class="edu-inst" data-pt="Centro Audiovisual de São Bernardo do Campo" data-en="Centro Audiovisual de São Bernardo do Campo (Audiovisual Center)">Centro Audiovisual de São Bernardo do Campo</p>
-      </div>
-    </div>
-
-    <div class="row reveal">
-      <div class="year">2021—23</div>
-      <div>
-        <p class="edu-title" data-pt="Bacharelado Interdisciplinar em Ciência e Tecnologia (não concluído)" data-en="Interdisciplinary Bachelor's in Science and Technology (not completed)">Bacharelado Interdisciplinar em Ciência e Tecnologia (não concluído)</p>
-        <p class="edu-inst">Universidade Federal do ABC</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="reveal">
-    <a class="cta" href="mailto:fferreiraclaudi@gmail.com">
-      <span class="label" data-pt="Entre em contato" data-en="Get in touch">Entre em contato</span>
-      <span class="chip">
-        e-mail
-      </span>
-    </a>
-    <a class="cta" href="https://wa.me/5511951865699" target="_blank" rel="noopener">
-      <span class="label" data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</span>
-      <span class="chip">
-        what's app
-      </span>
-    </a>
-  </footer>
-
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-bd" data-close></div>
+  <article class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <button class="drawer-x" id="drawerX" type="button" aria-label="Fechar">×</button>
+    <div id="drawerBody"></div>
+  </article>
 </div>
 
-<script>
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.12});
-  els.forEach(el=>io.observe(el));
-
-  const langBtn = document.getElementById('langBtn');
-  const langLabel = document.getElementById('langLabel');
-  let lang = 'pt';
-  langBtn.addEventListener('click', ()=>{
-    lang = lang === 'pt' ? 'en' : 'pt';
-    document.documentElement.setAttribute('data-lang', lang);
-    document.querySelectorAll('[data-pt]').forEach(node=>{
-      node.innerHTML = node.getAttribute('data-'+lang);
-    });
-    langLabel.textContent = lang === 'pt' ? 'read in english' : 'ler em português';
-  });
-
-</script>
-
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
