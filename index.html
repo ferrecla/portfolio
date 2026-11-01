@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Claudi Ferreira</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claudi Ferreira — Dashboard Portfolio</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Claudi Ferreira — artes da cena, iluminação, som, produção cultural, CRM e desenvolvimento web.">
 <meta property="og:type" content="website">
@@ -11,67 +11,208 @@
 <meta property="og:description" content="Artes da cena · Comunicação e tecnologia">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip" href="#trabalhos">Ir para os trabalhos</a>
+<a class="skip" href="#main-board">Ir para o conteúdo</a>
 
-<header class="hdr">
-  <a class="hdr-name" href="?">Claudi Ferreira</a>
-  <nav class="ctrls" aria-label="Seletor de área e idioma">
-    <div class="seg" id="segArea" role="group" aria-label="Área"></div>
-    <div class="seg seg-lang" id="segLang" role="group" aria-label="Idioma"></div>
-  </nav>
-</header>
-
-<main>
-  <section class="hero">
-    <p class="eyebrow" id="eyebrow"></p>
-    <h1 class="headline" id="headline"></h1>
-    <p class="lede" id="lede"></p>
-    <ul class="stats" id="stats"></ul>
-  </section>
-
-  <section id="trabalhos" class="sec">
-    <h2 class="sec-t" id="tWorks"></h2>
-    <div class="grid" id="grid"></div>
-  </section>
-
-  <section class="sec sec-two">
-    <div>
-      <h2 class="sec-t" id="tAbout"></h2>
-      <div class="prose" id="bio"></div>
-    </div>
-    <div>
-      <h2 class="sec-t" id="tTools"></h2>
-      <ul class="chips" id="tools"></ul>
-      <h2 class="sec-t mt" id="tEdu"></h2>
-      <ul class="edu" id="edu"></ul>
-    </div>
-  </section>
-
-  <section class="sec contact">
-    <h2 class="sec-t" id="tContact"></h2>
-    <div class="contact-grid">
-      <div id="contactLinks"></div>
-      <div class="share">
-        <p class="share-l" id="shareLabel"></p>
-        <div class="share-row">
-          <code id="shareUrl"></code>
-          <button class="btn-copy" id="btnCopy" type="button"></button>
-        </div>
+<!-- Header / Top Navigation Bar (Dashbio Pill Floating Dock style) -->
+<header class="dash-top">
+  <div class="dash-top-inner">
+    <div class="dash-brand">
+      <div class="avatar-badge">
+        <img src="assets/img/claudi-avatar.jpeg" alt="Claudi Ferreira" class="avatar-img">
+        <span class="status-indicator" title="Disponível para novos projetos" aria-label="Online"></span>
+      </div>
+      <div class="brand-meta">
+        <a href="?" class="brand-name">Claudi Ferreira</a>
+        <span class="brand-sub" id="brandSub">Artes da cena & Tech</span>
       </div>
     </div>
-  </section>
+
+    <nav class="dash-ctrls" aria-label="Controles de filtro e idioma">
+      <!-- Area Selector (Pill toggle) -->
+      <div class="dash-seg" id="segArea" role="group" aria-label="Área de atuação"></div>
+      <!-- Language Selector -->
+      <div class="dash-seg seg-lang" id="segLang" role="group" aria-label="Idioma"></div>
+      <!-- Theme Toggle -->
+      <button type="button" class="btn-theme" id="btnTheme" aria-label="Alternar modo escuro" title="Tema claro/escuro">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Horizontal Scrolling Canvas (Dashbio Viewport) -->
+<main id="main-board" class="dash-viewport">
+  <div class="dash-track">
+
+    <!-- CARD 1: PROFILE / BIO CARD (Yellow/Warm Dashbio Style) -->
+    <article class="dash-card card-profile" id="cardProfile">
+      <div class="c-head">
+        <div class="c-tag" id="profileBadge">Perfil</div>
+        <div class="c-status">
+          <span class="live-dot"></span>
+          <span id="availLabel">Disponível</span>
+        </div>
+      </div>
+      <div class="c-body">
+        <div class="profile-hero">
+          <span class="eyebrow" id="eyebrow"></span>
+          <h1 class="profile-headline" id="headline"></h1>
+          <p class="profile-lede" id="lede"></p>
+        </div>
+        <div class="profile-bio-box" id="bio"></div>
+      </div>
+      <div class="c-footer">
+        <ul class="profile-stats" id="stats"></ul>
+      </div>
+    </article>
+
+    <!-- CARD 2: FEATURED WORKS / HIGHLIGHTED GALLERY (Green/Sage Dashbio Style) -->
+    <article class="dash-card card-featured" id="cardFeatured">
+      <div class="c-head">
+        <div class="c-tag" id="tFeaturedTag">Destaque</div>
+        <span class="c-meta" id="featuredCount">Plataforma & Espetáculo</span>
+      </div>
+      <div class="c-body card-scrollable" id="featuredContainer">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="c-footer">
+        <span class="c-hint" id="hintClickCard">Toque num item para ver ficha técnica e links ↗</span>
+      </div>
+    </article>
+
+    <!-- CARD 3: ALL PROJECTS / SELECTED WORKS (Coral/Orange Dashbio Grid Style) -->
+    <article class="dash-card card-projects" id="cardProjects">
+      <div class="c-head">
+        <div class="c-tag" id="tWorksTag">Trabalhos</div>
+        <span class="c-count-pill" id="worksCount"></span>
+      </div>
+      <div class="c-body card-scrollable">
+        <div class="dash-project-grid" id="grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+      <div class="c-footer">
+        <div class="scroll-ind">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <span id="scrollMoreText">Role para ver mais projetos</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 4: TOOLS & STACK / CAPABILITIES (Lilac/Purple Dashbio Style) -->
+    <article class="dash-card card-skills" id="cardSkills">
+      <div class="c-head">
+        <div class="c-tag" id="tSkillsTag">Habilidades & Stack</div>
+        <span class="c-meta" id="skillsSub">Mesa, Software & Dev</span>
+      </div>
+      <div class="c-body">
+        <div class="skills-section">
+          <h3 class="skills-subt" id="tTools">Ferramentas & Equipamentos</h3>
+          <ul class="dash-pills" id="tools"></ul>
+        </div>
+        <div class="skills-section mt-sm">
+          <h3 class="skills-subt" id="tEdu">Formação & Certificações</h3>
+          <ul class="dash-edu-list" id="edu"></ul>
+        </div>
+      </div>
+      <div class="c-footer">
+        <div class="verified-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <span id="verifiedLabel">Currículo & Fichas Verificadas</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 5: DIRECT LINKS & CHANNELS (Mint/Aqua Dashbio Style) -->
+    <article class="dash-card card-links" id="cardLinks">
+      <div class="c-head">
+        <div class="c-tag" id="tChannelsTag">Canais</div>
+        <span class="c-meta">Direct Access</span>
+      </div>
+      <div class="c-body">
+        <p class="links-intro" id="linksIntro">Conecte-se comigo ou acesse as plataformas ativas:</p>
+        <div class="dash-link-buttons" id="dashLinkButtons">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+      <div class="c-footer">
+        <div class="quick-status">
+          <span class="pulse-dot"></span>
+          <span id="basedTxt">São Paulo, Brasil</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARD 6: CONTACT & SHARE (Pink/Salmon Dashbio Style) -->
+    <article class="dash-card card-contact" id="cardContact">
+      <div class="c-head">
+        <div class="c-tag" id="tContactTag">Contato</div>
+        <span class="c-meta" id="contactMeta">Fale comigo</span>
+      </div>
+      <div class="c-body">
+        <div class="contact-details" id="contactLinks"></div>
+
+        <div class="dash-share-box">
+          <label class="share-label" id="shareLabel" for="shareUrlInput">Compartilhar visualização</label>
+          <div class="share-input-group">
+            <input type="text" id="shareUrlInput" readonly value="">
+            <button type="button" class="btn-dash-copy" id="btnCopy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span id="btnCopyText">Copiar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="c-footer">
+        <div class="card-sign">
+          <span id="ftrTxt"></span>
+        </div>
+      </div>
+    </article>
+
+  </div>
 </main>
 
-<footer class="ftr"><span id="ftrTxt"></span></footer>
+<!-- Bottom Dock / Scroll Indicator -->
+<div class="dash-dock" id="dashDock">
+  <div class="dock-nav">
+    <button type="button" class="dock-btn" data-target="cardProfile" title="Perfil">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="dock-tip">Bio</span>
+    </button>
+    <button type="button" class="dock-btn" data-target="cardFeatured" title="Destaques">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span class="dock-tip">Destaques</span>
+    </button>
+    <button type="button" class="dock-btn" data-target="cardProjects" title="Trabalhos">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span class="dock-tip">Projetos</span>
+    </button>
+    <button type="button" class="dock-btn" data-target="cardSkills" title="Habilidades">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <span class="dock-tip">Stack</span>
+    </button>
+    <button type="button" class="dock-btn" data-target="cardLinks" title="Links">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="dock-tip">Canais</span>
+    </button>
+    <button type="button" class="dock-btn" data-target="cardContact" title="Contato">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span class="dock-tip">Contato</span>
+    </button>
+  </div>
+</div>
 
+<!-- Project Detail Modal Drawer (Dashbio Superellipse Modal) -->
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-bd" data-close></div>
   <article class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
-    <button class="drawer-x" id="drawerX" type="button" aria-label="Fechar">×</button>
+    <button class="drawer-x" id="drawerX" type="button" aria-label="Fechar modal">✕</button>
     <div id="drawerBody"></div>
   </article>
 </div>
