@@ -61,22 +61,22 @@ const DATA = {
     },
     tech: {
       pt: {
-        eyebrow: "Comunicação digital · CRM · Desenvolvimento web",
-        headline: "Produtos digitais, dados e conteúdo.",
-        lede: "Desenvolvimento web, operação de CRM e análise de conteúdo — da plataforma no ar ao fluxo de atendimento.",
+        eyebrow: "Creative Strategist · Estratégia Digital & Produto · Full-Stack",
+        headline: "Visão criativa, engenharia web e inteligência de dados.",
+        lede: "Profissional híbrido articulando desenvolvimento web full-stack, estratégia de produto digital, CRM e inteligência de conteúdo — conectando código, branding e audiência.",
         bio: [
-          "Claudi Ferreira trabalha com comunicação digital, CRM e desenvolvimento web. Foi analista de dados e de conteúdo na operação Kwai pelo IEST Group e Especialista em Mídias Sociais na Teleperformance, atendendo cliente bancário digital com RD Station CRM e Buzz Monitor.",
-          "Desenvolveu e mantém a Vera, plataforma de streaming de curtas em Next.js e Supabase, e desenvolveu a plataforma Arte Para Respirar em WordPress. Certificado em Google Analytics 4."
+          "Claudi Ferreira atua na intersecção entre tecnologia, produto e comunicação como Creative Strategist e desenvolvedor. Sua prática híbrida une arquitetura de software moderna, estratégia de dados e narrativa de marca para viabilizar e tracionar ecossistemas digitais.",
+          "Concebeu, desenhou e desenvolveu a Vera, plataforma de streaming de cinema independente construída em Next.js e Supabase. Foi analista de dados e inteligência de conteúdo na operação Kwai (IEST Group) e Especialista em Mídias Sociais na Teleperformance, operando CRM estratégico multicanal (RD Station CRM, Buzz Monitor). Certificado em Google Analytics 4 (GA4)."
         ],
         stats: []
       },
       en: {
-        eyebrow: "Digital communication · CRM · Web development",
-        headline: "Digital products, data and content.",
-        lede: "Web development, CRM operations and content analysis — from shipped platform to support workflow.",
+        eyebrow: "Creative Strategist · Digital Product & Growth · Full-Stack",
+        headline: "Creative strategy, web engineering and data intelligence.",
+        lede: "Hybrid professional bridging full-stack web development, digital product strategy, CRM and content intelligence — connecting clean code, brand design and audience growth.",
         bio: [
-          "Claudi Ferreira works across digital communication, CRM and web development. He was a data and content analyst on the Kwai operation at IEST Group and a Social Media Specialist at Teleperformance, supporting a digital banking client with RD Station CRM and Buzz Monitor.",
-          "He built and maintains Vera, a short-film streaming platform on Next.js and Supabase, and developed the Arte Para Respirar platform on WordPress. Google Analytics 4 certified."
+          "Claudi Ferreira operates at the intersection of technology, product and communication as a Creative Strategist and developer. His multidisciplinary approach merges modern software engineering, data analytics and brand storytelling to build scalable digital ecosystems.",
+          "He conceived, architected and built Vera, an independent film streaming platform on Next.js and Supabase. Former data and content strategist on the Kwai operation (IEST Group) and Social Media Specialist at Teleperformance (managing RD Station CRM, Buzz Monitor). Google Analytics 4 (GA4) certified."
         ],
         stats: []
       }
@@ -310,7 +310,7 @@ const DATA = {
       role:{pt:"Desenvolvimento web, curadoria e gestão de conteúdo",en:"Web development, curation and content management"},
       roleByArea:{
         artes:{pt:"Produção executiva, curadoria e identidade visual",en:"Executive production, curation and visual identity"},
-        tech:{pt:"Desenvolvimento web · Next.js e Supabase",en:"Web development · Next.js and Supabase"}
+        tech:{pt:"Creative Strategist & Web Developer · Next.js & Supabase",en:"Creative Strategist & Web Developer · Next.js & Supabase"}
       },
       desc:{pt:["O streaming gratuito de curtas do cinema independente brasileiro. Plataforma lançada e no ar, desenvolvida em Next.js com Supabase. Atuação integral em produção executiva, comunicação, identidade visual, social media, curadoria, gestão de conteúdo e desenvolvimento.","Nos últimos 30 dias: 513 visitantes, 1.334 page views, 65% do tráfego do Brasil. Implementação de verificação etária conforme ECA Digital (Decreto 12.880/2026)."],
             en:["The free streaming platform for Brazilian independent short films. Launched and live, built with Next.js and Supabase. Full involvement across executive production, communication, visual identity, social media, curation, content management and development.","Last 30 days: 513 visitors, 1,334 page views, 65% of traffic from Brazil. Age verification implementation in compliance with ECA Digital (Decree 12,880/2026)."]},

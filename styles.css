@@ -9,92 +9,59 @@
    ========================================================================== */
 
 :root {
-  /* Global Dashbio Light Palette - Refined & Balanced */
-  --bg-page: #F6F5F2;
-  --bg-page-subtle: #EEEEEC;
-  --text-main: #18181B;
-  --text-muted: #52525B;
-  --text-subtle: #71717A;
-  --line-color: rgba(24, 24, 27, 0.08);
-  --line-strong: rgba(24, 24, 27, 0.14);
+  /* Minimalist Monochromatic Framer Architecture */
+  --bg-page: #0D0E10;
+  --bg-page-subtle: #141619;
+  --text-main: #F4F4F6;
+  --text-muted: #8E929B;
+  --text-subtle: #5C606A;
+  --line-color: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.14);
 
-  /* Dashbio Distinct Card Theme Colors (Light) - Elegant soft pastels */
-  --card-profile-bg: #FEF9C3;       /* Soft Buttercup Yellow */
-  --card-profile-text: #422006;
-  --card-profile-tag: #FDE047;
+  /* Unified Clean Cards (Dark Minimal Framer Surface) */
+  --card-bg: #14161B;
+  --card-bg-subtle: #191C22;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(255, 255, 255, 0.22);
+  --card-inner-bg: rgba(255, 255, 255, 0.04);
+  --card-tag-bg: rgba(255, 255, 255, 0.09);
+  --card-tag-text: #FFFFFF;
 
-  --card-featured-bg: #DCFCE7;      /* Fresh Sage Mint */
-  --card-featured-text: #14532D;
-  --card-featured-tag: #86EFAC;
-
-  --card-projects-bg: #FFE4E6;      /* Soft Coral Blush */
-  --card-projects-text: #881337;
-  --card-projects-tag: #FDA4AF;
-
-  --card-skills-bg: #EDE9FE;        /* Soft Lilac Iris */
-  --card-skills-text: #4C1D95;
-  --card-skills-tag: #C4B5FD;
-
-  --card-links-bg: #E0F2FE;         /* Sky / Ice Blue */
-  --card-links-text: #0369A1;
-  --card-links-tag: #7DD3FC;
-
-  --card-contact-bg: #FCE7F3;       /* Delicate Rose */
-  --card-contact-text: #831843;
-  --card-contact-tag: #F472B6;
-
-  /* Card Geometry - Dashbio proportions */
-  --card-radius: 36px;
-  --inner-radius: 20px;
+  /* Card Geometry */
+  --card-radius: 28px;
+  --inner-radius: 16px;
   --pill-radius: 9999px;
-  --card-width: 420px;
-  --card-height: 76vh;
-  --card-min-height: 580px;
-  --card-max-height: 760px;
+  --card-width: 440px;
+  --card-height: 78vh;
+  --card-min-height: 600px;
+  --card-max-height: 780px;
 
-  /* Typography */
-  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  /* Dense & Powerful Typography */
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
-  /* Animations */
+  /* Smooth spring physics */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Dark Mode Tokens (Dashbio Dark Mode) */
-[data-theme="dark"] {
-  --bg-page: #0C0C0E;
-  --bg-page-subtle: #18181B;
-  --text-main: #F4F4F5;
-  --text-muted: #A1A1AA;
-  --text-subtle: #71717A;
-  --line-color: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.16);
+/* Light Mode — Clean Editorial Contrast */
+[data-theme="light"] {
+  --bg-page: #F7F7F8;
+  --bg-page-subtle: #ECECED;
+  --text-main: #0F1012;
+  --text-muted: #5E636E;
+  --text-subtle: #8A8F9C;
+  --line-color: rgba(15, 16, 18, 0.06);
+  --line-strong: rgba(15, 16, 18, 0.12);
 
-  /* Deep rich contrast in dark mode */
-  --card-profile-bg: #221D0E;
-  --card-profile-text: #FEF08A;
-  --card-profile-tag: #42381C;
-
-  --card-featured-bg: #0D261A;
-  --card-featured-text: #BBF7D0;
-  --card-featured-tag: #17422E;
-
-  --card-projects-bg: #2C1319;
-  --card-projects-text: #FECDD3;
-  --card-projects-tag: #4D212B;
-
-  --card-skills-bg: #1E1633;
-  --card-skills-text: #DDD6FE;
-  --card-skills-tag: #37285C;
-
-  --card-links-bg: #0C2333;
-  --card-links-text: #BAE6FD;
-  --card-links-tag: #173B52;
-
-  --card-contact-bg: #2B1220;
-  --card-contact-text: #FBCFE8;
-  --card-contact-tag: #4A2038;
+  --card-bg: #FFFFFF;
+  --card-bg-subtle: #F3F4F6;
+  --card-border: rgba(15, 16, 18, 0.08);
+  --card-border-hover: rgba(15, 16, 18, 0.25);
+  --card-inner-bg: #F8F9FA;
+  --card-tag-bg: #0F1012;
+  --card-tag-text: #FFFFFF;
 }
 
 /* Base Reset */
@@ -328,7 +295,7 @@ button {
   align-items: stretch;
 }
 
-/* Dashbio Cards: Superellipse Pill Containers */
+/* Dashbio Minimalist Clean Cards */
 .dash-card {
   width: var(--card-width);
   height: var(--card-height);
@@ -342,19 +309,17 @@ button {
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-spring);
-}
-
-[data-theme="dark"] .dash-card {
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.28s var(--ease-spring), border-color 0.25s, box-shadow 0.28s;
 }
 
 .dash-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.12);
+  border-color: var(--card-border-hover);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.35);
 }
 
 /* Card Header Components */
@@ -375,6 +340,9 @@ button {
   letter-spacing: 0.08em;
   padding: 0.35rem 0.85rem;
   border-radius: var(--pill-radius);
+  background: var(--card-tag-bg);
+  color: var(--card-tag-text);
+  border: 1px solid var(--line-strong);
 }
 
 .c-status {
@@ -454,52 +422,41 @@ button {
    ========================================================================== */
 
 /* 1. Profile Card */
-.card-profile {
-  background-color: var(--card-profile-bg);
-  color: var(--card-profile-text);
-}
-.card-profile .c-tag {
-  background: var(--card-profile-tag);
-  color: var(--card-profile-text);
-}
 .profile-hero .eyebrow {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.85;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
 .profile-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
   margin-bottom: 0.85rem;
 }
 .profile-lede {
   font-size: 0.92rem;
-  line-height: 1.45;
+  line-height: 1.5;
   font-weight: 500;
-  opacity: 0.9;
-  margin-bottom: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
 }
 .profile-bio-box {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--card-inner-bg);
+  border: 1px solid var(--line-color);
   border-radius: var(--inner-radius);
-  padding: 1rem 1.15rem;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: inherit;
-  backdrop-filter: blur(8px);
-}
-[data-theme="dark"] .profile-bio-box {
-  background: rgba(0, 0, 0, 0.35);
+  padding: 1.15rem 1.25rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text-main);
 }
 .profile-bio-box p + p {
-  margin-top: 0.65rem;
+  margin-top: 0.75rem;
 }
 .profile-stats {
   list-style: none;
@@ -534,40 +491,25 @@ button {
 }
 
 /* 2. Featured Works Card */
-.card-featured {
-  background-color: var(--card-featured-bg);
-  color: var(--card-featured-text);
-}
-.card-featured .c-tag {
-  background: var(--card-featured-tag);
-  color: var(--card-featured-text);
-}
 .featured-item {
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--card-inner-bg);
+  border: 1px solid var(--card-border);
   border-radius: var(--inner-radius);
   overflow: hidden;
   margin-bottom: 1rem;
   cursor: pointer;
-  transition: transform 0.25s var(--ease-spring), background 0.2s;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-[data-theme="dark"] .featured-item {
-  background: rgba(0, 0, 0, 0.35);
-  border-color: rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s var(--ease-spring), border-color 0.2s, background 0.2s;
 }
 .featured-item:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.85);
-}
-[data-theme="dark"] .featured-item:hover {
-  background: rgba(0, 0, 0, 0.5);
+  border-color: var(--card-border-hover);
 }
 .featured-cover {
   width: 100%;
   aspect-ratio: 16/9;
   position: relative;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--bg-page-subtle);
 }
 .featured-cover img {
   width: 100%;
@@ -582,33 +524,35 @@ button {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.78);
   color: #fff;
   font-size: 0.65rem;
   font-weight: 700;
   padding: 0.25rem 0.6rem;
   border-radius: var(--pill-radius);
+  letter-spacing: 0.05em;
 }
 .featured-info {
-  padding: 1rem;
+  padding: 1.15rem;
 }
 .featured-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 .featured-role {
   font-size: 0.8rem;
   font-weight: 600;
-  opacity: 0.85;
-  margin-top: 0.2rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
 }
 .featured-desc {
-  font-size: 0.76rem;
-  line-height: 1.45;
-  margin-top: 0.45rem;
-  opacity: 0.85;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -616,86 +560,94 @@ button {
 }
 
 /* 3. Projects Card */
-.card-projects {
-  background-color: var(--card-projects-bg);
-  color: var(--card-projects-text);
-}
-.card-projects .c-tag {
-  background: var(--card-projects-tag);
-  color: var(--card-projects-text);
-}
 .dash-project-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 .dash-p-card {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 18px;
-  padding: 0.85rem 1rem;
+  background: var(--card-inner-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 0.85rem 1.1rem;
   cursor: pointer;
   text-align: left;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s var(--ease-spring), background 0.2s, opacity 0.2s;
+  transition: transform 0.2s var(--ease-spring), border-color 0.2s, background 0.2s, opacity 0.2s;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
 }
-[data-theme="dark"] .dash-p-card {
-  background: rgba(0, 0, 0, 0.35);
-  border-color: rgba(255, 255, 255, 0.06);
-}
 .dash-p-card:hover {
   transform: translateX(4px);
-  background: rgba(255, 255, 255, 0.85);
-}
-[data-theme="dark"] .dash-p-card:hover {
-  background: rgba(0, 0, 0, 0.55);
+  border-color: var(--card-border-hover);
+  background: var(--card-bg-subtle);
 }
 
-/* De-emphasized projects (Menor ênfase visual conforme solicitação) */
-.dash-p-card.p-subtle {
-  opacity: 0.62;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px dashed rgba(0, 0, 0, 0.08);
+/* Priority Spotlight Projects: Fóssil & Vera */
+.dash-p-card.p-spotlight {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.25);
 }
-[data-theme="dark"] .dash-p-card.p-subtle {
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.08);
-  opacity: 0.55;
+[data-theme="light"] .dash-p-card.p-spotlight {
+  border: 1px solid rgba(15, 16, 18, 0.28);
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+}
+.dash-p-header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.spotlight-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--pill-radius);
+  background: var(--text-main);
+  color: var(--bg-page);
+}
+
+/* De-emphasized projects (Menor ênfase visual) */
+.dash-p-card.p-subtle {
+  opacity: 0.48;
+  background: transparent;
+  border: 1px dashed var(--line-strong);
 }
 .dash-p-card.p-subtle .dash-p-t {
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 .dash-p-card.p-subtle:hover {
-  opacity: 1;
+  opacity: 0.95;
   transform: translateX(3px);
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--card-inner-bg);
 }
-[data-theme="dark"] .dash-p-card.p-subtle:hover {
-  background: rgba(0, 0, 0, 0.45);
-}
+
 .dash-p-main {
   flex: 1 1 auto;
 }
 .dash-p-t {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   font-weight: 700;
   line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 .dash-p-r {
   font-size: 0.76rem;
   font-weight: 500;
-  opacity: 0.85;
+  color: var(--text-muted);
 }
 .dash-p-org {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  opacity: 0.75;
+  color: var(--text-subtle);
   margin-top: 0.15rem;
 }
 .dash-p-side {
@@ -705,44 +657,35 @@ button {
 .dash-p-yr {
   font-size: 0.72rem;
   font-weight: 700;
-  background: rgba(0, 0, 0, 0.07);
+  background: var(--card-inner-bg);
+  border: 1px solid var(--line-color);
   padding: 0.2rem 0.5rem;
   border-radius: var(--pill-radius);
   display: inline-block;
-}
-[data-theme="dark"] .dash-p-yr {
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
 }
 .dash-p-arrow {
   margin-top: 0.25rem;
   font-size: 0.9rem;
-  opacity: 0.6;
+  color: var(--text-subtle);
 }
 .scroll-ind {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   font-weight: 500;
-  opacity: 0.8;
+  color: var(--text-muted);
 }
 
 /* 4. Skills & Education Card */
-.card-skills {
-  background-color: var(--card-skills-bg);
-  color: var(--card-skills-text);
-}
-.card-skills .c-tag {
-  background: var(--card-skills-tag);
-  color: var(--card-skills-text);
-}
 .skills-subt {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.65rem;
-  opacity: 0.85;
+  color: var(--text-muted);
 }
 .mt-sm {
   margin-top: 1.25rem;
@@ -754,16 +697,13 @@ button {
   gap: 0.35rem;
 }
 .dash-pills li {
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 600;
   padding: 0.35rem 0.75rem;
   border-radius: var(--pill-radius);
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-[data-theme="dark"] .dash-pills li {
-  background: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.06);
+  background: var(--card-inner-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
 }
 .dash-edu-list {
   list-style: none;
@@ -772,27 +712,27 @@ button {
   gap: 0.5rem;
 }
 .dash-edu-list li {
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--card-inner-bg);
+  border: 1px solid var(--card-border);
   border-radius: 14px;
-  padding: 0.6rem 0.85rem;
-}
-[data-theme="dark"] .dash-edu-list li {
-  background: rgba(0, 0, 0, 0.3);
+  padding: 0.65rem 0.9rem;
 }
 .dash-edu-list b {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 .dash-edu-list span {
   font-size: 0.72rem;
-  opacity: 0.85;
+  color: var(--text-muted);
 }
 .verified-pill {
   display: flex;
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
+  color: var(--text-muted);
 }
 
 /* 5. Links & Channels Card */

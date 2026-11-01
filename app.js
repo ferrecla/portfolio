@@ -100,8 +100,8 @@
     const isPt = state.lang === 'pt';
 
     $('#brandSub').textContent = isPt
-      ? (state.area === 'artes' ? 'Artes da cena · Luz & Som' : 'Comunicação, CRM & Dev')
-      : (state.area === 'artes' ? 'Performing Arts · Light & Sound' : 'Communication, CRM & Dev');
+      ? (state.area === 'artes' ? 'Artes da cena · Luz & Som' : 'Creative Strategist · Tech & Produto')
+      : (state.area === 'artes' ? 'Performing Arts · Light & Sound' : 'Creative Strategist · Tech & Product');
 
     $('#profileBadge').textContent = isPt ? 'Perfil' : 'Profile';
     $('#availLabel').textContent = isPt ? 'Disponível' : 'Available';
@@ -141,11 +141,14 @@
     $('#tFeaturedTag').textContent = isPt ? 'Destaques' : 'Highlights';
     $('#hintClickCard').textContent = isPt ? 'Toque num item para ver ficha e links ↗' : 'Click any item for details & links ↗';
 
-    // Highlight key projects for tech: Vera, Arte para Respirar, Contra Cena
-    const featuredProjects = list.filter(p => ['vera', 'arte-para-respirar', 'contra-cena', 'zuca'].includes(p.id));
-    const toShow = featuredProjects.length ? featuredProjects : list.slice(0, 3);
+    // Destaque principal por área:
+    // Em Tech: Vera
+    // Em Artes: Fóssil
+    const highlightId = state.area === 'tech' ? 'vera' : 'fossil';
+    const featuredProjects = list.filter(p => p.id === highlightId);
+    const toShow = featuredProjects.length ? featuredProjects : list.slice(0, 1);
 
-    $('#featuredCount').textContent = `${toShow.length} ${isPt ? 'selecionados' : 'featured'}`;
+    $('#featuredCount').textContent = isPt ? 'Projeto em Destaque' : 'Featured Project';
 
     $('#featuredContainer').innerHTML = toShow.map((p, i) => {
       const coverImg = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.title)}">` :
@@ -177,13 +180,25 @@
 
     // Projetos com menos ênfase visual (opacidade suave, escala contida)
     const deEmphasizedIds = ['felicidade', 'mundareu', 'locarte', 'telas'];
+    // Projetos com destaque visual prioritário no grid
+    const featuredSpotlightIds = ['fossil', 'vera'];
 
     $('#grid').innerHTML = list.map((p, i) => {
       const isMuted = deEmphasizedIds.includes(p.id);
+      const isSpotlight = featuredSpotlightIds.includes(p.id);
+      const classes = [
+        'dash-p-card',
+        isMuted ? 'p-subtle' : '',
+        isSpotlight ? 'p-spotlight' : ''
+      ].filter(Boolean).join(' ');
+
       return `
-        <div class="dash-p-card ${isMuted ? 'p-subtle' : ''}" data-id="${p.id}" tabindex="0" role="button" aria-label="${esc(p.title)}">
+        <div class="${classes}" data-id="${p.id}" tabindex="0" role="button" aria-label="${esc(p.title)}">
           <div class="dash-p-main">
-            <h4 class="dash-p-t">${esc(p.title)}</h4>
+            <div class="dash-p-header-line">
+              <h4 class="dash-p-t">${esc(p.title)}</h4>
+              ${isSpotlight ? `<span class="spotlight-tag">${isPt ? 'Destaque' : 'Featured'}</span>` : ''}
+            </div>
             <p class="dash-p-r">${esc(roleOf(p))}</p>
             <p class="dash-p-org">${esc(p.org[state.lang])}</p>
           </div>
