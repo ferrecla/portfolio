@@ -235,11 +235,11 @@ tailwind.config = {
      Cards are glass panels floating over the photo + noise
      ════════════════════════════════════════════════════════════════ -->
 <main id="main-board" class="relative z-10 mx-auto w-full max-w-[1600px] px-4 pb-28 pt-5 md:px-6">
-  <div class="no-scrollbar flex snap-x snap-mandatory flex-col gap-4 overflow-x-auto md:flex-row md:items-stretch md:gap-5 md:pb-2">
+  <div class="no-scrollbar flex snap-x snap-mandatory flex-col gap-3 overflow-x-auto md:flex-row md:items-start md:gap-3 md:pb-2">
 
     <!-- ─── CARD 1 · PROFILE ─── -->
     <article id="cardProfile"
-      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[420px] md:p-6 md:h-[min(76vh,760px)] md:min-h-[560px]">
+      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[380px] md:p-5 md:max-h-[min(76vh,720px)]">
       <div class="mb-4 flex shrink-0 items-center justify-between gap-3">
         <span id="profileBadge" class="rounded-full bg-white/10 px-3 py-1 font-display text-caption-2 font-bold uppercase tracking-[0.08em] text-label-secondary">Perfil</span>
         <span class="flex items-center gap-1.5">
@@ -262,7 +262,7 @@ tailwind.config = {
 
     <!-- ─── CARD 2 · FEATURED (hidden on "artes") ─── -->
     <article id="cardFeatured"
-      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[420px] md:p-6 md:h-[min(76vh,760px)] md:min-h-[560px]">
+      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[380px] md:p-5 md:max-h-[min(76vh,720px)]">
       <div class="mb-4 flex shrink-0 items-center justify-between gap-3">
         <span id="tFeaturedTag" class="rounded-full bg-white/10 px-3 py-1 font-display text-caption-2 font-bold uppercase tracking-[0.08em] text-label-secondary">Destaque</span>
         <span id="featuredCount" class="text-caption-1 font-medium text-label-secondary">Projeto em destaque</span>
@@ -275,7 +275,7 @@ tailwind.config = {
 
     <!-- ─── CARD 3 · PROJECTS ─── -->
     <article id="cardProjects"
-      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[420px] md:p-6 md:h-[min(76vh,760px)] md:min-h-[560px]">
+      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[380px] md:p-5 md:max-h-[min(76vh,720px)]">
       <div class="mb-4 flex shrink-0 items-center justify-between gap-3">
         <span id="tWorksTag" class="rounded-full bg-white/10 px-3 py-1 font-display text-caption-2 font-bold uppercase tracking-[0.08em] text-label-secondary">Trabalhos</span>
         <span id="worksCount" class="rounded-full bg-white/10 px-2.5 py-1 text-caption-2 font-bold text-label-secondary"></span>
@@ -293,16 +293,16 @@ tailwind.config = {
 
     <!-- ─── CARD 4 · SKILLS ─── -->
     <article id="cardSkills"
-      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[420px] md:p-6 md:h-[min(76vh,760px)] md:min-h-[560px]">
+      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[380px] md:p-5 md:max-h-[min(76vh,720px)]">
       <div class="mb-4 flex shrink-0 items-center justify-between gap-3">
         <span id="tSkillsTag" class="rounded-full bg-white/10 px-3 py-1 font-display text-caption-2 font-bold uppercase tracking-[0.08em] text-label-secondary">Habilidades</span>
         <span id="skillsSub" class="text-caption-1 font-medium text-label-secondary">Stack</span>
       </div>
       <div class="thin-scrollbar -mr-1 flex-1 overflow-y-auto pr-1">
-        <h3 id="tTools" class="mb-2.5 font-display text-caption-1 font-bold uppercase tracking-[0.08em] text-label-secondary">Ferramentas</h3>
-        <ul id="tools" class="flex flex-wrap gap-1.5"></ul>
-        <h3 id="tEdu" class="mb-2.5 mt-6 font-display text-caption-1 font-bold uppercase tracking-[0.08em] text-label-secondary">Formação</h3>
+        <h3 id="tEdu" class="mb-2.5 font-display text-caption-1 font-bold uppercase tracking-[0.08em] text-label-secondary">Formação</h3>
         <ul id="edu" class="flex flex-col gap-2"></ul>
+        <h3 id="tTools" class="mb-2.5 mt-5 font-display text-caption-1 font-bold uppercase tracking-[0.08em] text-label-secondary">Ferramentas</h3>
+        <ul id="tools" class="flex flex-wrap gap-1.5"></ul>
       </div>
       <div class="mt-4 shrink-0 border-t border-white/10 pt-4">
         <div class="flex items-center gap-2 text-caption-1 font-medium text-label-tertiary">
@@ -314,7 +314,7 @@ tailwind.config = {
 
     <!-- ─── CARD 5 · CONTACT + LINKS (merged) ─── -->
     <article id="cardContact"
-      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[420px] md:p-6 md:h-[min(76vh,760px)] md:min-h-[560px]">
+      class="glass flex w-full shrink-0 snap-center flex-col rounded-ios-xl p-5 transition-transform duration-300 ease-ios hover:-translate-y-0.5 md:w-[380px] md:p-5 md:max-h-[min(76vh,720px)]">
       <div class="mb-4 flex shrink-0 items-center justify-between gap-3">
         <span id="tChannelsTag" class="rounded-full bg-white/10 px-3 py-1 font-display text-caption-2 font-bold uppercase tracking-[0.08em] text-label-secondary">Contato</span>
         <span id="contactMeta" class="text-caption-1 font-medium text-label-secondary">Canais</span>

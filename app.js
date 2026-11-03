@@ -124,8 +124,8 @@
     const isPt = state.lang === 'pt';
 
     $('#brandSub').textContent = isPt
-      ? (state.area === 'artes' ? 'Artes da cena · Luz & Som' : 'Creative Strategist · Tech & Produto')
-      : (state.area === 'artes' ? 'Performing Arts · Light & Sound' : 'Creative Strategist · Tech & Product');
+      ? (state.area === 'artes' ? 'Artes da cena · Luz & Som' : 'Comunicação digital · CRM · Web')
+      : (state.area === 'artes' ? 'Performing Arts · Light & Sound' : 'Digital communication · CRM · Web');
 
     $('#profileBadge').textContent = isPt ? 'Perfil' : 'Profile';
     $('#availLabel').textContent = isPt ? 'Disponível' : 'Available';
@@ -261,7 +261,7 @@
       const labelUp = state.lang === 'pt' ? 'Ver menos' : 'Show less';
 
       parts.push(`<button type="button" id="btnVerMais"
-        class="mt-2 flex w-full items-center justify-center gap-1.5 rounded-ios py-2.5 text-subhead font-semibold text-accent transition-colors duration-200 ease-ios active:glass-inner hover:glass-inner text-accent-mint dark:hover:bg-white/[0.06]">
+        class="mt-2 flex w-full items-center justify-center gap-1.5 rounded-ios py-2.5 text-subhead font-semibold text-accent-mint transition-colors duration-200 ease-ios hover:bg-white/10 active:bg-white/5">
         <span class="icon-chevron" id="chevronLabel">${esc(label)}</span>
         <svg id="chevronArrow" class="h-4 w-4 transition-transform duration-300 ease-ios" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </button>`);
@@ -327,10 +327,10 @@
     $('#basedTxt').textContent = c.city[state.lang];
 
     const links = [
-      { title: 'veracurtas.com.br', sub: isPt ? 'Plataforma streaming Next.js' : 'Next.js streaming platform', url: c.vera },
-      { title: 'Cargo Collective', sub: isPt ? 'Site pessoal' : 'Personal site', url: c.cargo }
+      { title: isPt ? 'Site pessoal' : 'Personal site', sub: 'claudi.cargo.site', url: c.cargo }
     ];
     if (!isArtes) {
+      links.unshift({ title: 'veracurtas.com.br', sub: isPt ? 'Plataforma streaming Next.js' : 'Next.js streaming platform', url: c.vera });
       links.push({ title: 'LinkedIn', sub: 'claudi-ferreira', url: c.linkedin });
       links.push({ title: 'GitHub', sub: 'github.com/ferrecla', url: c.github });
     }
