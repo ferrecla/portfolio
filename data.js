@@ -375,6 +375,19 @@ const DATA = {
       facts:{pt:[["Orientação","Profa. Dra. Helena Tania Katz"],["Bolsa","PIBIC-CEPE"],["Período","set 2026 – ago 2027"]],
              en:[["Supervisor","Prof. Helena Tania Katz, PhD"],["Grant","PIBIC-CEPE"],["Period","Sep 2026 – Aug 2027"]]},
       links:[]
+    },
+        {
+      id:"autografias", areas:["artes"], year:"2026", img:null,
+      title:"Autografias",
+      org:{pt:"SESC Centro de Pesquisa e Formação",en:"SESC Center for Research and Training"},
+      role:{pt:"Performer",en:"Performer"},
+      desc:{
+        pt:["Performance no projeto Autografias, programação de lançamentos de livros e encontros com autoras e autores no SESC Centro de Pesquisa e Formação."],
+        en:["Performance in the Autografias project, a programme of book launches and meetings with authors at SESC Center for Research and Training."]
+      },
+      facts:{pt:[["Função","Performer"],["Instituição","SESC Centro de Pesquisa e Formação"],["Data","28 de outubro de 2026"]],
+             en:[["Role","Performer"],["Venue","SESC Center for Research and Training"],["Date","28 October 2026"]]},
+      links:[{l:"Instagram",u:"https://www.instagram.com/p/DeM6l0zkRpD/"}]
     }
   ]
 };
